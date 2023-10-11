@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Subscriber Portal</title>
+    <title>Geek's Gossip</title>
 </head>
 
 <body>
@@ -18,12 +18,75 @@
         </div>
     </header>
 
-    <div class="container">
-        <h2>Add Content</h2>
-        <form action="process_form.php" method="post">
-            <!-- Form fields for subscriber information and interests -->
-        </form>
-    </div>
+    <main class="container">
+        <section class="form-row row justify-content-center">
+              <form method="post" class="form-horizontal col-md-6 col-md-offset-3">
+                      <h2>Create User</h2>
+                      <div class="form-group">
+                          <label for="input1" class="col-sm-2 control-label">First Name</label>
+                          <div class="col-sm-10">
+                              <input type="text" name="fname" class="form-control" id="input1">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="input1" class="col-sm-2 control-label">Last Name</label>
+                          <div class="col-sm-10">
+                              <input type="text" name="lname" class="form-control" id="input1">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="input1" class="col-sm-2 control-label">Email</label>
+                          <div class="col-sm-10">
+                              <input type="email" name="email" class="form-control" id="input1">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="input1" class="col-sm-2 control-label">Age</label>
+                          <div class="col-sm-10">
+                              <select name="age" class="form-control">
+                                  <option>Select Your Age</option>
+                                  <option value="20">20</option>
+                                  <option value="21">21</option>
+                                  <option value="22">22</option>
+                                  <option value="23">23</option>
+                                  <option value="24">24</option>
+                                  <option value="25">25</option>
+                              </select>
+                          </div>
+                          <fieldset>
+                            <legend>Check here the topics you would like to hear about</legend>
+                                <div>
+                                    <input type="checkbox" name="movies" id="movies" value="movies" />
+                                    <label for="movies">Movies</label>
+            
+                                    <input type="checkbox" name="music" id="music" value="music" />
+                                    <label for="music">Music</label>
+            
+                                    <input type="checkbox" name="animes" id="animes" value="animes" />
+                                    <label for="animes">Animes</label>
+
+                                    <input type="checkbox" name="series" id="series" value="series" />
+                                    <label for="series">Series</label>
+
+                                    <input type="checkbox" name="books" id="books" value="books" />
+                                    <label for="books">Books</label>
+                                </div>
+                            </fieldset>
+                      </div>
+                      <div class="form-group">
+                          <input type="submit" class="btn btn-primary col-md-2 col-md-offset-10" value="Submit">
+                      </div>
+              </form>
+          <div class="form-group submit-message">
+            <?php
+                     require_once('database.php');
+                     if(!empty($_POST)){
+                         
+                     }
+                      ?>
+         </div>
+       </section>
+      </main>
 
     <footer>
         <!-- Footer content here -->
