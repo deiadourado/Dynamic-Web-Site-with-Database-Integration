@@ -35,16 +35,22 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT fname, lname, email, birthday, checkbox FROM geekperson";
+    $sql = "SELECT fname, lname, email, birthday, checkbox FROM geekperson";
+    $res = mysqli_query($conn, $sql);
     
-    if ($conn->query($sql) === TRUE) {
-        echo "Your data has been saved successfully!";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+    while($r = mysqli_fetch_assoc($res)){
+        
+    ?>
+    <tr>
+        <td><?php echo $r['fname']; ?></td>
+        <td><?php echo $r['lname']; ?></td>
+        <td><?php echo $r['email']; ?></td>
+        <td><?php echo $r['birthday']; ?></td>
+        <td><?php echo $r['checkbox']; ?></td>
+    </tr>
+
+    <?php
     }
-} else {
-    echo "Invalid request"; // Handle non-POST requests
-}
 
 // close the connection
 $conn->close();
