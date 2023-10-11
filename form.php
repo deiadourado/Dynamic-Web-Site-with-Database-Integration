@@ -40,11 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     $checkboxString = implode(',', $checkbox);
     
-    // Insert data into the database
+    // to insert data
     $sql = "INSERT INTO geekperson (fname, lname, email, birthday, checkbox) VALUES ('$fname', '$lname', '$email', '$birthday', '$checkboxString')";
     
     if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+        echo "Your data has been saved successfully!";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "Invalid request"; // Handle non-POST requests
 }
 
-// Close the database connection
+// close the connection
 $conn->close();
 ?>
 
