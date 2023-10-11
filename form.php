@@ -1,7 +1,7 @@
 <?php
-require_once('sql/geekdb.php'); // Include your database connection file
+$conn = mysqli_connect("localhost", "root", "", "geekdb"); //database file
 
-// Check if the connection is successful
+//check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -14,14 +14,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // Checkbox values handling
     $topics = [];
-    if(isset($_POST['movies'])) $topics[] = 'Movies';
-    if(isset($_POST['music'])) $topics[] = 'Music';
-    if(isset($_POST['animes'])) $topics[] = 'Animes';
-    if(isset($_POST['series'])) $topics[] = 'Series';
-    if(isset($_POST['books'])) $topics[] = 'Books';
+    if(isset($_POST['movies'])) $checkbox[] = 'Movies';
+    if(isset($_POST['music'])) $checkbox[] = 'Music';
+    if(isset($_POST['animes'])) $checkbox[] = 'Animes';
+    if(isset($_POST['series'])) $checkbox[] = 'Series';
+    if(isset($_POST['books'])) $checkbox[] = 'Books';
+    
+    $checkboxString = implode(',', $checkbox);
     
     // Insert data into the database
-    $sql = "INSERT INTO subscribers (first_name, last_name, email, birthday, topics) VALUES ('$fname', '$lname', '$email', '$birthday', '" . implode(',', $topics) . "')";
+    $sql = "INSERT INTO geekperson (fname, lname, email, birthday, checkbox) VALUES ('$fname', '$lname', '$email', '$birthday', '$checkboxString')";
     
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
