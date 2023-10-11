@@ -1,5 +1,10 @@
 <?php
-require_once('geekdb.php'); // Include your database connection file
+require_once('sql/geekdb.php'); // Include your database connection file
+
+// Check if the connection is successful
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fname = $_POST['fname'];
@@ -23,6 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
+} else {
+    echo "Invalid request"; // Handle non-POST requests
 }
 
 // Close the database connection
