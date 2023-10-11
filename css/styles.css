@@ -1,38 +1,25 @@
+@font-face {
+    font-family: Fuggles-Regular;
+    src: url("../Fonts/Fuggles-Regular.ttf");
+  }
+
+@font-face {
+    font-family: CroissantOne-Regular;
+    src: url("../Fonts/CroissantOne-Regular.ttf");
+  }
+
+h1 {
+    color: #fff;
+    font-family: Fuggles-Regular;
+    font-size: 70px;
+    text-shadow: 2px 2px 5px pink;
+    text-align: justify;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: rgba(0, 128, 0, 0.5)
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav {
-    /* Navigation styles here */
-}
-
-.logo {
-    /* Logo styles here */
-}
-
-.container {
-    margin: 20px;
-}
-
-form {
-    /* Form styles here */
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
