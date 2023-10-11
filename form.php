@@ -1,3 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Geek's Gossip</title>
+</head>
+
+<body>
+    <header>
+        <div align="center">
+            <h1>Geek's Gossip</h1>
+        </div>
+        <h2>Your geek news portal!</h2>
+    </header>
+
 <?php
 $conn = mysqli_connect("localhost", "root", "", "geekdb"); //database file
 
@@ -12,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $birthday = $_POST['birthday'];
     
-    // Checkbox values handling
-    $topics = [];
+    // checkbox values
+    $checkbox = [];
     if(isset($_POST['movies'])) $checkbox[] = 'Movies';
     if(isset($_POST['music'])) $checkbox[] = 'Music';
     if(isset($_POST['animes'])) $checkbox[] = 'Animes';
@@ -37,3 +55,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Close the database connection
 $conn->close();
 ?>
+
+<footer>
+        <!-- Footer content here -->
+    </footer>
+</body>
+
+</html>
