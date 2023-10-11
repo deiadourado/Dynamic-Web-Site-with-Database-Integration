@@ -16,6 +16,13 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    font-family: CroissantOne-Regular;
+    font-size: 30px;
+    text-shadow: 2px 2px 5px pink;
+    text-align: center;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
