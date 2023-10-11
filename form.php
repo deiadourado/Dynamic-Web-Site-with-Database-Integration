@@ -57,7 +57,7 @@ $conn->close();
 ?>
 
 <footer>
-        <!-- Footer content here -->
+        Made by Andreia Dourado (2023)
     </footer>
 </body>
 
