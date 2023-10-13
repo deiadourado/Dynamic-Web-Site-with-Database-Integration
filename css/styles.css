@@ -8,6 +8,17 @@
     src: url("../Fonts/CroissantOne-Regular.ttf");
   }
 
+  .logo-container {
+    display: flex;
+    align-items: center; 
+}
+
+.logo-container img {
+    margin-right: 10px; 
+    width: 75px;
+    height: 75px;
+}
+
 h1 {
     color: #fff;
     font-family: Fuggles-Regular;

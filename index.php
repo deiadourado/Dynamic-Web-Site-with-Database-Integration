@@ -10,14 +10,14 @@
 
 <body>
     <header>
-        <div align="center">
-            <h1>Geek's Gossip</h1>
-        </div>
-        <h2>Your geek news portal!</h2>
+    <div class="logo-container">
+        <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="header logo"></a>
+        <h1>Geek's Gossip</h1>
+    </div>
+    <h2>Your geek news portal!</h2>
 
         <nav class="navbar navbar-dark bg-primary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.php"><img src="./img/php-logo.png" alt="header logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
