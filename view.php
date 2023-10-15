@@ -16,9 +16,14 @@
         <h2>Your geek news portal!</h2>
     </header>
 
+    <div class="menu">
+            <span class="menu-item"><a href="index.php">Home</a></span>
+            <span class="menu-item"><a href="view.php">View</a></span>
+    </div>
+
     <main class="container">
-        <div class="table">
-            <table class="table">
+        <div class="table-container">
+            <table>
                 <tr>
                     <th>First Name</th>
                     <th>Last Name</th>
@@ -26,8 +31,7 @@
                     <th>Birthday</th>
                     <th>Topics</th>
                 </tr>
-
-                <?php
+        <?php
         $conn = mysqli_connect("localhost", "root", "", "geekdb"); //database file
 
 //check connection

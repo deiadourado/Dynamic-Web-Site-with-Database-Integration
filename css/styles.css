@@ -8,15 +8,20 @@
     src: url("../Fonts/CroissantOne-Regular.ttf");
   }
 
-  .logo-container {
+
+.logo-container {
     display: flex;
-    align-items: center; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 0px; 
 }
 
 .logo-container img {
-    margin-right: 10px; 
-    width: 75px;
-    height: 75px;
+    width: auto;
+    height: auto;
+    max-width: 50%;
 }
 
 h1 {
@@ -25,6 +30,8 @@ h1 {
     font-size: 70px;
     text-shadow: 2px 2px 5px pink;
     text-align: center;
+    margin-top: -80px;
+    margin-bottom: 0px;
 }
 
 h2 {
@@ -38,6 +45,86 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: rgba(0, 128, 0, 0.5)
+    background: rgba(0, 128, 0, 0.5);
+    min-height: 100vh;
+    padding-bottom: 50px;
 }
 
+footer{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: palevioletred;
+    color: #000;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+.table-container {
+    width: 80%; /* Set the desired width for the table container */
+    margin: 0 auto; /* Center the table container horizontally */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 5px;
+}
+
+th {
+    background-color: #04AA6D;
+    color: white;
+}
+
+form {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: solid;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ff69b4; 
+    padding: 10px 0; 
+    font-family: 'Impact', sans-serif; 
+}
+
+.menu-item {
+    background-color: #ff69b4; /* Apply the background color to menu items */
+    padding: 5px 10px; /* Add padding to menu items */
+    border-radius: 5px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: #000; 
+    font-weight: bold; 
+    transition: color 0.3s; 
+}
+
+.menu-item a:hover {
+    color: #ff1493; 
+}
+
+.btn-primary {
+    background-color: palevioletred; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ff1493; 
+}

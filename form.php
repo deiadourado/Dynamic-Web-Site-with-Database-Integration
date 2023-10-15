@@ -24,36 +24,43 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
-    $email = $_POST['email'];
-    $birthday = $_POST['birthday'];
+if (session_status()!==PHP_SESSION_ACTIVE)session_start();
+if (isset($_SESSION['POST'])){
+    $_POST = $_SESSION['POST'];
+    unset($_SESSION['POST']);
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $email = $_POST['email'];
+        $birthday = $_POST['birthday'];
+        
+        // checkbox values
+        $checkbox = [];
+        if(isset($_POST['movies'])) $checkbox[] = 'Movies';
+        if(isset($_POST['music'])) $checkbox[] = 'Music';
+        if(isset($_POST['animes'])) $checkbox[] = 'Animes';
+        if(isset($_POST['series'])) $checkbox[] = 'Series';
+        if(isset($_POST['books'])) $checkbox[] = 'Books';
+        
+        $checkboxString = implode(',', $checkbox);
+        
+        // to insert data
+        $sql = "INSERT INTO geekperson (fname, lname, email, birthday, checkbox) VALUES ('$fname', '$lname', '$email', '$birthday', '$checkboxString')";
+        
+        if ($conn->query($sql) === TRUE) {
+            echo "Your data has been saved successfully!";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
     
-    // checkbox values
-    $checkbox = [];
-    if(isset($_POST['movies'])) $checkbox[] = 'Movies';
-    if(isset($_POST['music'])) $checkbox[] = 'Music';
-    if(isset($_POST['animes'])) $checkbox[] = 'Animes';
-    if(isset($_POST['series'])) $checkbox[] = 'Series';
-    if(isset($_POST['books'])) $checkbox[] = 'Books';
-    
-    $checkboxString = implode(',', $checkbox);
-    
-    // to insert data
-    $sql = "INSERT INTO geekperson (fname, lname, email, birthday, checkbox) VALUES ('$fname', '$lname', '$email', '$birthday', '$checkboxString')";
-    
-    if ($conn->query($sql) === TRUE) {
-        echo "Your data has been saved successfully!";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
 } else {
     echo "Invalid request"; // Handle non-POST requests
 }
 
-// close the connection
 $conn->close();
+
 ?>
 
 <footer>
