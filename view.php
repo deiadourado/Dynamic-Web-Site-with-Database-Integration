@@ -39,7 +39,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-    $sql = "SELECT fname, lname, email, birthday, checkbox FROM geekperson";
+    $sql = "SELECT id, fname, lname, email, birthday, checkbox FROM geekperson";
     $res = mysqli_query($conn, $sql);
     
     while($r = mysqli_fetch_assoc($res)){
@@ -51,6 +51,7 @@ if ($conn->connect_error) {
         <td><?php echo $r['email']; ?></td>
         <td><?php echo $r['birthday']; ?></td>
         <td><?php echo $r['checkbox']; ?></td>
+        <td><a href="delete.php?id=<?php echo $r['id']; ?>">Delete</a></td>
     </tr>
 
     <?php

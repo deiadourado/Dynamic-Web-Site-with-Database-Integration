@@ -31,6 +31,7 @@ if (isset($_SESSION['POST'])){
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        $id = $_POST['id'];
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
         $email = $_POST['email'];
