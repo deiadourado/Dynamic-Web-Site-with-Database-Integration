@@ -52,6 +52,7 @@ if ($conn->connect_error) {
         <td><?php echo $r['birthday']; ?></td>
         <td><?php echo $r['checkbox']; ?></td>
         <td><a href="delete.php?id=<?php echo $r['id']; ?>">Delete</a></td>
+        <td><a href="update.php?id=<?php echo $r['id']; ?>">Update</a></td>
     </tr>
 
     <?php
