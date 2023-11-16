@@ -32,15 +32,9 @@
                     <th>Topics</th>
                 </tr>
         <?php
-        $conn = mysqli_connect("localhost", "root", "", "geekdb"); //database file
-
-//check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-    $sql = "SELECT id, fname, lname, email, birthday, checkbox FROM geekperson";
-    $res = mysqli_query($conn, $sql);
+        include("connection.php");
+    
+        $res = $database -> list_user();
     
     while($r = mysqli_fetch_assoc($res)){
         
@@ -57,9 +51,6 @@ if ($conn->connect_error) {
 
     <?php
     }
-
-// close the connection
-$conn->close();
 ?>
             </table>
         </div>

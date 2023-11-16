@@ -17,12 +17,8 @@
     </header>
 
 <?php
-$conn = mysqli_connect("localhost", "root", "", "geekdb"); //database file
+        include("connection.php");
 
-//check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 if (session_status()!==PHP_SESSION_ACTIVE)session_start();
 if (isset($_SESSION['POST'])){
@@ -48,25 +44,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $checkboxString = implode(',', $checkbox);
         
         // to insert data
-        $sql = "INSERT INTO geekperson (fname, lname, email, birthday, checkbox) VALUES ('$fname', '$lname', '$email', '$birthday', '$checkboxString')";
-        
-        if ($conn->query($sql) === TRUE) {
-            echo "Your data has been saved successfully!";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
-    
-} else {
-    echo "Invalid request"; // Handle non-POST requests
+        $res = $database -> create_user($fname, $lname, $birthday, $email, $checkbox);
 }
-
-$conn->close();
-
 ?>
 
 <footer>
         Made by Andreia Dourado (2023)
     </footer>
 </body>
-
 </html>
