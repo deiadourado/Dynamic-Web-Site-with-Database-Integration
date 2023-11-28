@@ -90,7 +90,7 @@
     </div>
     <h2>Your geek news portal!</h2>
 
-    <div class="buttons">
+    <div class="button-container">
                 <a href="create_user.php" class="new-user-button">Create your user</a>
                 <a href="view.php" class="view-button">View</a>
             </div>

@@ -42,12 +42,11 @@ h2 {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: rgba(0, 128, 0, 0.5);
-    min-height: 100vh;
-    padding-bottom: 50px;
+    /* Background gradient */
+    background: linear-gradient(to right, rgba(102, 0, 0, 1), rgba(255, 0, 0, 1));
+    color: #fff; /* Text color */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Font family */
+    margin: 0; /* Remove default body margin */
 }
 
 footer{
@@ -129,10 +128,17 @@ form {
     background-color: #ff1493; 
 }
 
+/* Container to center buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Add margin to adjust the vertical spacing if needed */
+}
+
 /* Sweet-themed button styles with hover effect */
 .new-user-button,
 .view-button {
-    display: inline-block;
+    align-items: center;
     margin: 0 10px;
     padding: 10px 20px;
     text-decoration: none;
