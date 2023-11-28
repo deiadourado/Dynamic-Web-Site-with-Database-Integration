@@ -128,3 +128,29 @@ form {
 .btn-primary:hover {
     background-color: #ff1493; 
 }
+
+/* Sweet-themed button styles with hover effect */
+.new-user-button,
+.view-button {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.view-button {
+    background-color: #ff8c94; /* Sweet color for the gallery button */
+}
+
+.new-user-button {
+    background-color: #ffd699; /* Sweet color for the recipe button */
+}
+
+.view-button:hover,
+.new-user-button:hover {
+    background-color: #ff6f78; /* Darker sweet color on hover */
+}

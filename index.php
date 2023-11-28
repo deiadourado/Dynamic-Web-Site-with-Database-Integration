@@ -90,9 +90,15 @@
     </div>
     <h2>Your geek news portal!</h2>
 
-    <div class="menu">
+    <div class="buttons">
+                <a href="create_user.php" class="new-user-button">Create your user</a>
+                <a href="view.php" class="view-button">View</a>
+            </div>
+
+    <!-- <div class="menu">
             <span class="menu-item"><a href="index.php">Home</a></span>
             <span class="menu-item"><a href="view.php">View</a></span>
+            <span class="menu-item"><a href="create_user.php">Create User</a></span> <!-- Botão para a página de criação de usuário -->
     </div>
 
     </header>
