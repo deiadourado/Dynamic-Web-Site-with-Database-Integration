@@ -43,10 +43,14 @@ h2 {
 
 body {
     /* Background gradient */
-    background: linear-gradient(to right, rgba(102, 0, 0, 1), rgba(255, 0, 0, 1));
+    background: linear-gradient(to right, rgba(218,112,214, 1), rgba(221,160,221, 1));
     color: #fff; /* Text color */
     font-family: Georgia, 'Times New Roman', Times, serif; /* Font family */
     margin: 0; /* Remove default body margin */
+}
+
+.welcome {
+    align-items: center;
 }
 
 footer{
@@ -60,6 +64,13 @@ footer{
     width: 100%;
     z-index: 1;
   }
+
+.image{
+    width: 500px;
+    height: 400px;
+    margin: auto; 
+    display: block;
+}
 
 .table-container {
     width: 80%; /* Set the desired width for the table container */
@@ -137,7 +148,7 @@ form {
 
 /* Sweet-themed button styles with hover effect */
 .new-user-button,
-.view-button {
+.view-button, .home-button {
     align-items: center;
     margin: 0 10px;
     padding: 10px 20px;
@@ -156,7 +167,77 @@ form {
     background-color: #ffd699; /* Sweet color for the recipe button */
 }
 
+.home-button {
+    background-color: #ffd699; /* Sweet color for the recipe button */
+}
+
 .view-button:hover,
-.new-user-button:hover {
+.new-user-button:hover, .home-button:hover {
     background-color: #ff6f78; /* Darker sweet color on hover */
 }
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-row div {
+    flex: 1;
+    padding: 5%;
+}
+
+.form-row div form {
+    width: 90%;
+    height: auto;
+    margin: auto;
+}
+
+.form-row div:nth-child(1) {
+    background-color: rgb(218,112,214);
+    color: #fff;
+}
+
+.form-row div:nth-child(2) {
+    background-color: rgb(221,160,221);
+    color: #fff;
+}
+
+  .signin-row{
+    padding: 5%;
+  }
+  .person-masthead{
+    width: 100%;
+    height: 50vh;
+    /* add background image */
+  }
+  .person-masthead div{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .person-masthead div h1{
+    color: #fff;
+    font-size: 2.5em;
+  }
+  .person-row{
+    padding: 5% 10%;
+  }
+  .success-row,
+  .signin-masthead,
+  .add-image-page{
+    background-image: url("../img/sample-image.jpg");
+    background-size: cover;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .success-row div,
+  .signin-masthead div,
+  .add-image-page div{
+    padding: 5%;
+    background-color: rgba(0,0,0,.7);
+    border-radius: 5px;
+    color: #fff;
+  }
+  .success-back-row{padding: 5%;}

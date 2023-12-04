@@ -8,7 +8,7 @@ if(isset($_GET['id'])) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "DELETE FROM geekperson WHERE id = '$id'";
+    $sql = "DELETE FROM users WHERE id = '$id'";
     
     if ($conn->query($sql) === TRUE) {
         echo "Record deleted successfully";

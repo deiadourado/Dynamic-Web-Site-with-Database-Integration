@@ -4,31 +4,55 @@ class Database {
     private $conn;
 
     function __construct() {
-        $this->conn = mysqli_connect("localhost", "root", "", "geekdb"); //database file
-    if(mysqli_connect_error()) {
-      die("Failed to connect to MySQL: " . mysqli_connect_error());
+        $this->conn = new mysqli("localhost", "root", "", "geekdb"); // Substitua com suas credenciais
+        if ($this->conn->connect_error) {
+            die("Failed to connect to MySQL: " . $this->conn->connect_error);
+        }
     }
-  }
 
-  public function create_user($fname, $lname, $birthday, $email, $checkbox) {
-    $sql = "INSERT INTO geekperson (fname, lname, email, birthday, checkbox) VALUES ('$fname', '$lname', '$email', '$birthday', '$checkbox')";
-    $result = mysqli_query($this->conn, $sql);
-
-    if ($result) {
-        echo "Your data has been saved successfully!";
-    } else {
-        echo "Error: " . mysqli_error($this->conn);
+    public function getConnection() {
+        return $this->conn;
     }
-}
+
+    public function create_user($firstname, $lastname, $username, $hashed_password, $profilePicture) {
+        $stmt = $this->conn->prepare("INSERT INTO users (firstname, lastname, username, password, profilePicture) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssss", $firstname, $lastname, $username, $hashed_password, $profilePicture);
+        
+        if ($stmt->execute()) {
+            echo "Your data has been saved successfully!";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+    
+        $stmt->close();
+    }
+
+    public function update_user($id, $firstname, $lastname, $username, $profilePicture) {
+        $stmt = $this->conn->prepare("UPDATE users set firstname = ?, lastname = ?, username = ?, profilePicture = ? where id = $id");
+        $stmt->bind_param("ssss", $firstname, $lastname, $username, $profilePicture);
+        
+        if ($stmt->execute()) {
+            echo "Your data has been saved successfully!";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+    
+        $stmt->close();
+    }
+
     public function list_user() {
-        $sql = "SELECT id, fname, lname, email, birthday, checkbox FROM geekperson";
-        $res = mysqli_query($this->conn, $sql);
-        return $res;
+        $sql = "SELECT * FROM users";
+        $result = $this->conn->query($sql);
+        return $result;
     }
 
-    public function update_user($fname, $lname, $birthday, $email, $checkbox) {
-    $sql = "";
+    public function get_user($id) {
+        $sql = "SELECT * FROM users where id = $id";
+        $result = $this->conn->query($sql);
+        return mysqli_fetch_array($result);
     }
+
 }
+
 $database = new Database();
 ?>
