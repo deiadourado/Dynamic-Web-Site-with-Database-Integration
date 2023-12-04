@@ -17,10 +17,11 @@
         <h3>Create User</h3>
     </header>
 
-    <div class="menu">
-        <span class="menu-item"><a href="index.php">Home</a></span>
-        <span class="menu-item"><a href="view.php">View</a></span>
-    </div>
+    <div class="button-container">
+                <a href="index.php" class="home-button">Home</a>
+                <a href="view.php" class="view-button">View</a>
+            </div>
+    <br>
 
     <form method="post" action="create_user_script.php" enctype="multipart/form-data">
         <div class="form-group">
