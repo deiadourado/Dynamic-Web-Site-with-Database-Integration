@@ -44,6 +44,10 @@ if(isset($_GET['id'])) {
 
                 <p><input class="form-control" name="username" type="text" placeholder="Username" value="<?php echo $r['username']; ?>" required /></p>
 
+                <p><input class="form-control" name="favorite_movie" type="text" placeholder="Favorite Movie" value="<?php echo $r['favorite_movie']; ?>" required /></p>
+
+                <p><input class="form-control" name="favorite_music" type="text" placeholder="Favorite Music" value="<?php echo $r['favorite_music']; ?>" required /></p>
+
                 <div class="form-group">
                     <p><input type="file" class="form-control" name="profilePicture" accept="image/*" placeholder="Upload here your profile picture" required=""></p>
                 </div>
