@@ -16,9 +16,7 @@ include('protect.php');
         <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="header logo"></a>
         <h1>Geek's View</h1>
     </div>
-    <p class="welcome"> Welcome to the view page, <?php echo $_SESSION['firstname']; ?>. </p>
-
-    <a href="logout.php">Logout</a>
+    <p style="text-align: center;"> Welcome to the view page, <b><?php echo $_SESSION['firstname']; ?></b>. </p>
 
     <main class="container">
         <div class="table-container">
@@ -47,7 +45,7 @@ include('protect.php');
         <td><?php echo $r['password']; ?></td>
         <td><?php echo $r['favorite_movie']; ?></td>
         <td><?php echo $r['favorite_music']; ?></td>
-        <td><img src= "<?php echo('uploads/'.$r['profilePicture']);?>" alt="" width="50" height="50">  </td>
+        <td><img src= "<?php echo('uploads/'.$r['profilePicture']);?>" alt="" width="150" height="150">  </td>
         <td><a href="edit.php?id=<?php echo $r['id']; ?>">Edit</a></td>
         <td><a href="delete.php?id=<?php echo $r['id']; ?>">Delete</a></td>
     </tr>
@@ -56,6 +54,10 @@ include('protect.php');
     }
 ?>
             </table>
+            <br>
+            <div class="button-container">
+                <a href="logout.php" class="btn-logout">Logout</a>
+            </div>
         </div>
       </main>
 </p>
