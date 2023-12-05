@@ -6,11 +6,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $last_name = isset($_POST['last_name']) ? $_POST['last_name'] : "";
     $username = isset($_POST['username']) ? $_POST['username'] : "";
     $password = isset($_POST['password']) ? $_POST['password'] : "";
+    $favorite_movie = isset($_POST['favorite_movie']) ? $_POST['favorite_movie'] : "";
+    $favorite_music = isset($_POST['favorite_music']) ? $_POST['favorite_music'] : "";
     $profilePicture = isset($_POST['profilePicture']) ? $_POST['profilePicture'] : "";
     $confirm = isset($_POST['confirm']) ? $_POST['confirm'] : "";
 
     // Validar os campos (adapte conforme necessário)
-    if (empty($first_name) || empty($last_name) || empty($username) || empty($password) || empty($confirm)) {
+    if (empty($first_name) || empty($last_name) || empty($username) || empty($password) || empty($favorite_movie) || empty($favorite_music) || empty($confirm)) {
         echo "Fill all spaces.";
     } elseif ($password !== $confirm) {
         echo "Passwords doesn't match.";

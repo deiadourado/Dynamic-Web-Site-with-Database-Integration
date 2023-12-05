@@ -43,7 +43,7 @@ include('protect.php');
         <td><?php echo $r['lastname']; ?></td>
         <td><?php echo $r['username']; ?></td>
         <td><?php echo $r['password']; ?></td>
-        <td><img src= <?php echo 'uploads/'.$r['profilePicture']?> alt="" width="50" height="50">  </td>
+        <td><img src= "<?php echo('uploads/'.$r['profilePicture']);?>" alt="" width="50" height="50">  </td>
         <td><a href="edit.php?id=<?php echo $r['id']; ?>">Edit</a></td>
         <td><a href="delete.php?id=<?php echo $r['id']; ?>">Delete</a></td>
     </tr>

@@ -36,13 +36,17 @@ if(isset($_GET['id'])) {
 
     <main class="container">
         <div class="table-container">
-            <form method="post" action="update.php">
+            <form method="post" action="update.php" enctype="multipart/form-data">
                 <input type="hidden" id="id" name="id" value=<?php echo $id; ?> />
                 <p><input class="form-control" name="first_name" type="text" placeholder="First Name" value="<?php echo $r['firstname']; ?>" required/></p>
 
                 <p><input class="form-control" name="last_name" type="text" placeholder="Last Name" value="<?php echo $r['lastname']; ?>" required /></p>
 
                 <p><input class="form-control" name="username" type="text" placeholder="Username" value="<?php echo $r['username']; ?>" required /></p>
+
+                <div class="form-group">
+                    <p><input type="file" class="form-control" name="profilePicture" accept="image/*" placeholder="Upload here your profile picture" required=""></p>
+                </div>
 
                 <input class="btn btn-light" type="submit" name="submit" value="Salvar" />
             </form>

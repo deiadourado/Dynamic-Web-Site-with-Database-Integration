@@ -32,6 +32,8 @@ session_start(); // Move session_start to the top
                     <p><input class="form-control" name="username" type="text" placeholder="Username" required /></p>
                     <p><input class="form-control" name="password" type="password" placeholder="Password" required /></p>
                     <p><input class="form-control" name="confirm" type="password" placeholder="Confirm Password" required /></p>
+                    <p><input class="form-control" name="favorite_movie" type="text" placeholder="Favorite Movie" required /></p>
+                    <p><input class="form-control" name="favorite_music" type="text" placeholder="Favorite Music" required /></p>
                     <div class="form-group">
                         <p><input type="file" class="form-control" name="profilePicture" accept="image/*" placeholder="Upload here your profile picture" required=""></p>
                     </div>
