@@ -24,19 +24,58 @@ session_start(); // Move session_start to the top
     <h2>Your geek news portal!</h2>
 
     <section class="form-row row">
-        <div class="col-sm-12 col-md-6 col-lg-6">
-            <h3>Don't have an account, then sign up below!</h3>
-                <form method="post" action="save-admin.php" enctype="multipart/form-data">
-                    <p><input class="form-control" name="first_name" type="text" placeholder="First Name" required/></p>
-                    <p><input class="form-control" name="last_name" type="text" placeholder="Last Name" required /></p>
-                    <p><input class="form-control" name="username" type="text" placeholder="Username" required /></p>
-                    <p><input class="form-control" name="password" type="password" placeholder="Password" required /></p>
-                    <p><input class="form-control" name="confirm" type="password" placeholder="Confirm Password" required /></p>
-                    <div class="form-group">
-                        <p><input type="file" class="form-control" name="profilePicture" accept="image/*" placeholder="Upload here your profile picture" required=""></p>
-                    </div>
-                    <input class="btn btn-light" type="submit" name="submit" value="Register" />
-                </form>
+    <div class="col-sm-12 col-md-6 col-lg-6">
+        <h3>Don't have an account? Sign up below!</h3>
+        <form method="post" action="save-admin.php" enctype="multipart/form-data">
+            
+        <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input class="form-control" name="first_name" type="text" id="first_name" placeholder="Enter your first name" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input class="form-control" name="last_name" type="text" id="last_name" placeholder="Enter your last name" required />
+            </div>
+
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input class="form-control" name="username" type="text" id="username" placeholder="Choose a username" required />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input class="form-control" name="password" type="password" id="password" placeholder="Enter your password" required />
+            </div>
+
+            <div class="form-group">
+                <label for="confirm">Confirm Password:</label>
+                <input class="form-control" name="confirm" type="password" id="confirm" placeholder="Confirm your password" required />
+            </div>
+
+            <div class="form-group">
+                <label for="favorite_movie">Favorite Movie:</label>
+                <input class="form-control" name="favorite_movie" type="text" id="favorite_movie" placeholder="Your favorite movie" required />
+            </div>
+
+            <div class="form-group">
+                <label for="favorite_music">Favorite Music:</label>
+                <input class="form-control" name="favorite_music" type="text" id="favorite_music" placeholder="Your favorite music" required />
+            </div>
+
+            <div class="form-group">
+                <label for="profilePicture">Profile Picture:</label>
+                <input type="file" class="form-control" name="profilePicture" id="profilePicture" accept="image/*" required="">
+            </div>
+
+            <div class="form-group">
+                <input class="btn btn-light btn-lg btn-register" type="submit" name="submit" value="Register" />
+            </div>
+
+        </form>
+    </div>
+</section>
+
         </div>
     </section>
 </body>

@@ -30,22 +30,65 @@ if(isset($_GET['id'])) {
         <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="header logo"></a>
         <h1>Geek's View</h1>
     </div>
-    <p class="welcome"> Welcome to the view page, <?php echo $_SESSION['firstname']; ?>. </p>
+    </header>
 
-    <a href="logout.php">Logout</a>
+    <nav>
+        <div class="menu-item">
+            <a href="index.php">Home</a>
+        </div>
+        <div class="menu-item">
+            <a href="view.php">View</a>
+        </div>
+    </nav>
+
+    <p class="welcome"> You can edit your data, <b><?php echo $_SESSION['firstname']; ?></b>. </p>
 
     <main class="container">
         <div class="table-container">
-            <form method="post" action="update.php">
-                <input type="hidden" id="id" name="id" value=<?php echo $id; ?> />
-                <p><input class="form-control" name="first_name" type="text" placeholder="First Name" value="<?php echo $r['firstname']; ?>" required/></p>
+        <form method="post" action="update.php" enctype="multipart/form-data">
+            <input type="hidden" id="id" name="id" value="<?php echo $id; ?>" />
+            <input type="hidden" id="profilePictureOriginal" name="profilePictureOriginal" value="<?php echo $r['profilePicture']; ?>" />
 
-                <p><input class="form-control" name="last_name" type="text" placeholder="Last Name" value="<?php echo $r['lastname']; ?>" required /></p>
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input class="form-control" name="first_name" type="text" id="first_name" placeholder="Enter your first name" value="<?php echo $r['firstname']; ?>" required />
+            </div>
 
-                <p><input class="form-control" name="username" type="text" placeholder="Username" value="<?php echo $r['username']; ?>" required /></p>
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input class="form-control" name="last_name" type="text" id="last_name" placeholder="Enter your last name" value="<?php echo $r['lastname']; ?>" required />
+            </div>
 
-                <input class="btn btn-light" type="submit" name="submit" value="Salvar" />
-            </form>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input class="form-control" name="username" type="text" id="username" placeholder="Choose a username" value="<?php echo $r['username']; ?>" required />
+            </div>
+
+            <div class="form-group">
+                <label for="favoriteMovie">Favorite Movie:</label>
+                <input class="form-control" name="favoriteMovie" type="text" id="favoriteMovie" placeholder="Your favorite movie" value="<?php echo $r['favorite_movie']; ?>" required />
+            </div>
+
+            <div class="form-group">
+                <label for="favoriteMusic">Favorite Music:</label>
+                <input class="form-control" name="favoriteMusic" type="text" id="favoriteMusic" placeholder="Your favorite music" value="<?php echo $r['favorite_music']; ?>" required />
+            </div>
+
+            <div class="form-group">
+                <label for="profilePicture">Profile Picture:</label>
+                <input type="file" class="form-control" name="profilePicture" id="profilePicture" accept="image/*" placeholder="Upload here your profile picture" value="<?php echo $r['profilePicture']; ?>">
+            </div>
+            <br>
+            <div class="form-group">
+                <button class="btn btn-primary btn-lg" type="submit" name="submit">Save</button>
+            </div>
+
+        </form>
+
+        <div class="button-container">
+                <a href="logout.php" class="btn-logout">Logout</a>
+            </div>
+
         </div>
     </main>
 </html>
