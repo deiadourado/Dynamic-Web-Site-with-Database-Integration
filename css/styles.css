@@ -1,39 +1,43 @@
+/* Define custom fonts using @font-face */
 @font-face {
     font-family: Fuggles-Regular;
     src: url("../Fonts/Fuggles-Regular.ttf");
-  }
+}
 
 @font-face {
     font-family: CroissantOne-Regular;
     src: url("../Fonts/CroissantOne-Regular.ttf");
-  }
+}
 
-
+/* Styles for the logo container */
 .logo-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-bottom: 0px; 
+    margin-bottom: 0px; /* Adjust margin as needed */
 }
 
+/* Styles for the logo image */
 .logo-container img {
     width: auto;
     height: auto;
     max-width: 50%;
 }
 
+/* Styles for h1 headings */
 h1 {
     color: #fff;
     font-family: Fuggles-Regular;
     font-size: 70px;
     text-shadow: 2px 2px 5px pink;
     text-align: center;
-    margin-top: -80px;
-    margin-bottom: 0px;
+    margin-top: -80px; /* Adjust margin as needed */
+    margin-bottom: 0px; /* Adjust margin as needed */
 }
 
+/* Styles for h2 headings */
 h2 {
     font-family: CroissantOne-Regular;
     font-size: 30px;
@@ -41,6 +45,7 @@ h2 {
     text-align: center;
 }
 
+/* Styles for h3 headings */
 h3 {
     font-family: CroissantOne-Regular;
     font-size: 15px;
@@ -48,14 +53,15 @@ h3 {
     text-align: center;
 }
 
+/* General body styles */
 body {
-    /* Background gradient */
     background: linear-gradient(to right, rgba(218,112,214, 1), rgba(221,160,221, 1));
-    color: #fff; /* Text color */
-    font-family: Georgia, 'Times New Roman', Times, serif; /* Font family */
-    margin: 0; /* Remove default body margin */
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
 }
 
+/* Styles for the welcome class */
 .welcome {
     font-family: 'Times New Roman', Times, serif;
     display: flex;
@@ -64,7 +70,8 @@ body {
     text-align: center;
 }
 
-footer{
+/* Footer styles */
+footer {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: palevioletred;
     color: #000;
@@ -74,20 +81,23 @@ footer{
     bottom: 0;
     width: 100%;
     z-index: 1;
-  }
+}
 
-.image{
+/* Styles for images */
+.image {
     width: 500px;
     height: 400px;
-    margin: auto; 
+    margin: auto;
     display: block;
 }
 
+/* Styles for table container */
 .table-container {
-    width: 80%; /* Set the desired width for the table container */
-    margin: 0 auto; /* Center the table container horizontally */
+    width: 80%;
+    margin: 0 auto;
 }
 
+/* Styles for tables */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -105,41 +115,45 @@ th {
     color: white;
 }
 
+/* Styles for forms */
 form {
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     text-decoration: solid;
 }
 
+/* Styles for menu */
 .menu {
     display: flex;
     justify-content: space-around;
-    background-color: #ff69b4; 
-    padding: 10px 0; 
-    font-family: 'Impact', sans-serif; 
+    background-color: #ff69b4;
+    padding: 10px 0;
+    font-family: 'Impact', sans-serif;
 }
 
+/* Styles for menu items */
 .menu-item {
-    background-color: #ff69b4; /* Apply the background color to menu items */
-    padding: 5px 10px; /* Add padding to menu items */
+    background-color: #ff69b4;
+    padding: 5px 10px;
     border-radius: 5px;
 }
 
 .menu-item a {
     text-decoration: none;
-    color: #000; 
-    font-weight: bold; 
-    transition: color 0.3s; 
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 .menu-item a:hover {
-    color: #ff1493; 
+    color: #ff1493;
 }
 
+/* Button styles */
 .btn-primary {
-    background-color: palevioletred; 
-    color: white; 
-    border: none; 
+    background-color: palevioletred;
+    color: white;
+    border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -147,19 +161,18 @@ form {
 }
 
 .btn-primary:hover {
-    background-color: #ff1493; 
+    background-color: #ff1493;
 }
 
 /* Container to center buttons */
 .button-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px; /* Add margin to adjust the vertical spacing if needed */
+    margin-top: 20px;
 }
 
 /* Sweet-themed button styles with hover effect */
-.new-user-button,
-.view-button, .home-button {
+.new-user-button, .view-button, .home-button {
     align-items: center;
     margin: 0 10px;
     padding: 10px 20px;
@@ -171,20 +184,19 @@ form {
 }
 
 .view-button {
-    background-color: #ff8c94; /* Sweet color for the gallery button */
+    background-color: #ff8c94;
 }
 
 .new-user-button {
-    background-color: #ffd699; /* Sweet color for the recipe button */
+    background-color: #ffd699;
 }
 
 .home-button {
-    background-color: #ffd699; /* Sweet color for the recipe button */
+    background-color: #ffd699;
 }
 
-.view-button:hover,
-.new-user-button:hover, .home-button:hover {
-    background-color: #ff6f78; /* Darker sweet color on hover */
+.view-button:hover, .new-user-button:hover, .home-button:hover {
+    background-color: #ff6f78;
 }
 
 .button-container {
@@ -196,18 +208,17 @@ form {
     align-items: center;
     padding: 10px 20px;
     text-decoration: none;
-    background-color: #ff8c94; /* Cor fofa para o botão */
+    background-color: #ff8c94;
     color: #fff;
     border-radius: 5px;
     transition: background-color 0.3s ease-in-out;
 }
 
 .btn-logout:hover {
-    background-color: #ff6f78; /* Cor mais escura ao passar o mouse */
+    background-color: #ff6f78;
 }
 
-.btn-primary,
-.btn-signup {
+.btn-primary, .btn-signup {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: inline-block;
     padding: 10px 20px;
@@ -226,26 +237,25 @@ form {
     background-color: #ffd699;
 }
 
-.btn-primary:hover,
-.btn-signup:hover {
-    background-color: #ff1493; /* Cor mais escura ao passar o mouse */
+.btn-primary:hover, .btn-signup:hover {
+    background-color: #ff1493;
 }
 
 .btn-register {
-    background-color: #ff8c94; /* Cor fofa para o botão Register */
+    background-color: #ff8c94;
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 15px 30px; /* Ajuste o tamanho do botão conforme necessário */
+    padding: 15px 30px;
     font-size: 18px;
     transition: background-color 0.3s ease-in-out;
 }
 
 .btn-register:hover {
-    background-color: #ff6f78; /* Cor mais escura ao passar o mouse */
+    background-color: #ff6f78;
 }
 
-
+/* Styles for form rows */
 .form-row {
     display: flex;
     justify-content: space-between;
@@ -272,47 +282,53 @@ form {
     color: #fff;
 }
 
-  .signin-row{
+/* Additional styles for various sections */
+.signin-row {
     padding: 5%;
-  }
-  .person-masthead{
+}
+
+.person-masthead {
     width: 100%;
     height: 50vh;
-    /* add background image */
-  }
-  .person-masthead div{
+}
+
+.person-masthead div {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-  }
-  .person-masthead div h1{
+}
+
+.person-masthead div h1 {
     color: #fff;
     font-size: 2.5em;
-  }
-  .person-row{
+}
+
+.person-row {
     padding: 5% 10%;
-  }
-  .success-row,
-  .signin-masthead,
-  .add-image-page{
+}
+
+.success-row, .signin-masthead, .add-image-page {
     background-image: url("../img/sample-image.jpg");
     background-size: cover;
     height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .success-row div,
-  .signin-masthead div,
-  .add-image-page div{
+}
+
+.success-row div, .signin-masthead div, .add-image-page div {
     padding: 5%;
     background-color: rgba(0,0,0,.7);
     border-radius: 5px;
     color: #fff;
-  }
-  .success-back-row{padding: 5%;}
+}
 
-  .action-link {
+.success-back-row {
+    padding: 5%;
+}
+
+/* Styles for action links */
+.action-link {
     display: inline-block;
     padding: 8px 12px;
     text-align: center;
@@ -322,24 +338,24 @@ form {
 }
 
 .edit-link {
-    background-color: #3498db; /* Cor primária do botão Edit */
-    color: #fff; /* Cor do texto */
-    border: 1px solid #3498db; /* Cor da borda */
+    background-color: #3498db;
+    color: #fff;
+    border: 1px solid #3498db;
 }
 
 .delete-link {
-    background-color: #e74c3c; /* Cor primária do botão Delete */
-    color: #fff; /* Cor do texto */
-    border: 1px solid #e74c3c; /* Cor da borda */
+    background-color: #e74c3c;
+    color: #fff;
+    border: 1px solid #e74c3c;
 }
 
 .action-link:hover {
-    background-color: #2980b9; /* Cor mais escura ao passar o mouse */
-    color: #fff; /* Cor do texto ao passar o mouse */
+    background-color: #2980b9;
+    color: #fff;
 }
 
+/* Navigation styles */
 nav {
-    
     text-align: center;
     padding: 5px 0;
 }
@@ -357,5 +373,5 @@ nav {
 }
 
 .menu-item a:hover {
-    color: #ff69b4; /* Cor ao passar o mouse sobre o link */
+    color: #ff69b4;
 }
