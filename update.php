@@ -1,12 +1,14 @@
 <?php
 include('connection.php');
 
+echo implode($_POST);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $first_name = isset($_POST['first_name']) ? $_POST['first_name'] : "";
     $last_name = isset($_POST['last_name']) ? $_POST['last_name'] : "";
     $username = isset($_POST['username']) ? $_POST['username'] : "";
-    $favorite_movie = isset($_POST['favorite_movie']) ? $_POST['favorite_movie'] : "";
-    $favorite_music = isset($_POST['favorite_music']) ? $_POST['favorite_music'] : "";
+    $favorite_movie = isset($_POST['favoriteMovie']) ? $_POST['favoriteMovie'] : "";
+    $favorite_music = isset($_POST['favoriteMusic']) ? $_POST['favoriteMusic'] : "";
     $id = isset($_POST['id']) ? $_POST['id'] : "";
     $profilePicture = isset($_POST['profilePicture']) ? $_POST['profilePicture'] : "";
 
@@ -22,16 +24,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         $fileName = basename($_FILES["profilePicture"]["name"]);
         $targetFilePath = $uploadDir . $fileName;
 
-        // Move the uploaded file to the desired location
-        if (move_uploaded_file($_FILES["profilePicture"]["tmp_name"], $targetFilePath)) {
-            // Chame o método create_user do objeto Database para salvar o usuário
-            $database->update_user($id, $first_name, $last_name, $username, $fileName);
-
-            // Redirecione para a página de login
-            header("Location: view.php");
-            exit();
+        if ($_FILES["profilePicture"] != $_FILES["profilePictureOriginal"]) {
+            move_uploaded_file($_FILES["profilePicture"]["tmp_name"], $targetFilePath);
         }
+
+    } else {
+            $fileName = $_POST['profilePictureOriginal'];
     }
+
+    $database->update_user($id, $first_name, $last_name, $username, $fileName, $favorite_movie, $favorite_music); 
 }
+
+header("Location: view.php");
+exit();
 
 ?>

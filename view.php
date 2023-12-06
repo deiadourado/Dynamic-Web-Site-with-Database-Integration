@@ -16,6 +16,17 @@ include('protect.php');
         <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="header logo"></a>
         <h1>Geek's View</h1>
     </div>
+    </header>
+    
+    <nav>
+        <div class="menu-item">
+            <a href="index.php">Home</a>
+        </div>
+        <div class="menu-item">
+            <a href="view.php">View</a>
+        </div>
+    </nav>
+
     <p style="text-align: center;"> Welcome to the view page, <b><?php echo $_SESSION['firstname']; ?></b>. </p>
 
     <main class="container">
@@ -46,8 +57,9 @@ include('protect.php');
         <td><?php echo $r['favorite_movie']; ?></td>
         <td><?php echo $r['favorite_music']; ?></td>
         <td><img src= "<?php echo('uploads/'.$r['profilePicture']);?>" alt="" width="150" height="150">  </td>
-        <td><a href="edit.php?id=<?php echo $r['id']; ?>">Edit</a></td>
-        <td><a href="delete.php?id=<?php echo $r['id']; ?>">Delete</a></td>
+        <td><a class="action-link edit-link" href="edit.php?id=<?php echo $r['id']; ?>">Edit</a></td>
+        <td><a class="action-link delete-link" href="delete.php?id=<?php echo $r['id']; ?>">Delete</a></td>
+
     </tr>
 
     <?php

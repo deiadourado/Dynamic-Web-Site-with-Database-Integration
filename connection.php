@@ -14,9 +14,9 @@ class Database {
         return $this->conn;
     }
 
-    public function create_user($firstname, $lastname, $username, $hashed_password, $profilePicture) {
-        $stmt = $this->conn->prepare("INSERT INTO users (firstname, lastname, username, password, profilePicture) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssss", $firstname, $lastname, $username, $hashed_password, $profilePicture);
+    public function create_user($firstname, $lastname, $username, $hashed_password, $profilePicture, $favoriteMovie, $favoriteMusic) {
+        $stmt = $this->conn->prepare("INSERT INTO users (firstname, lastname, username, password, profilePicture, favorite_movie, favorite_music) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssssss", $firstname, $lastname, $username, $hashed_password, $profilePicture, $favoriteMovie, $favoriteMusic);
         
         if ($stmt->execute()) {
             echo "Your data has been saved successfully!";
@@ -27,9 +27,9 @@ class Database {
         $stmt->close();
     }
 
-    public function update_user($id, $firstname, $lastname, $username, $profilePicture) {
-        $stmt = $this->conn->prepare("UPDATE users set firstname = ?, lastname = ?, username = ?, profilePicture = ? where id = $id");
-        $stmt->bind_param("ssss", $firstname, $lastname, $username, $profilePicture);
+    public function update_user($id, $firstname, $lastname, $username, $profilePicture, $favoriteMovie, $favoriteMusic) {
+        $stmt = $this->conn->prepare("UPDATE users set firstname = ?, lastname = ?, username = ?, profilePicture = ?, favorite_movie = ?, favorite_music = ? where id = $id");
+        $stmt->bind_param("ssssss", $firstname, $lastname, $username, $profilePicture, $favoriteMovie, $favoriteMusic);
         
         if ($stmt->execute()) {
             echo "Your data has been saved successfully!";

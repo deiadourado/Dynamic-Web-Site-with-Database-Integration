@@ -27,7 +27,8 @@ session_start(); // Move session_start to the top
     <div class="col-sm-12 col-md-6 col-lg-6">
         <h3>Don't have an account? Sign up below!</h3>
         <form method="post" action="save-admin.php" enctype="multipart/form-data">
-            <div class="form-group">
+            
+        <div class="form-group">
                 <label for="first_name">First Name:</label>
                 <input class="form-control" name="first_name" type="text" id="first_name" placeholder="Enter your first name" required/>
             </div>
@@ -68,8 +69,9 @@ session_start(); // Move session_start to the top
             </div>
 
             <div class="form-group">
-                <input class="btn btn-light btn-lg" type="submit" name="submit" value="Register" />
+                <input class="btn btn-light btn-lg btn-register" type="submit" name="submit" value="Register" />
             </div>
+
         </form>
     </div>
 </section>
