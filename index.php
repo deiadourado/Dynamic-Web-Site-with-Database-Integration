@@ -1,12 +1,14 @@
 <?php
 include('connection.php');
-session_start(); // Move session_start to the top
+session_start(); // Start session to manage user data across pages
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Check if username and password are set in the POST request
     if (isset($_POST['username']) && isset($_POST['password'])) {
         $username = $_POST['username'];
-        $password = $_POST['password']; // Updated from 'senha'
+        $password = $_POST['password'];
 
+        // Validate username and password
         if (empty($username)) {
             echo "Please fill in your username";
         } else if (empty($password)) {
@@ -14,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $username = $database->getConnection()->real_escape_string($username);
 
-            // Query the database using the username to retrieve user information
+            // Query the database to retrieve user information using the provided username
             $sql_code = "SELECT * FROM users WHERE username = '$username'";
             $sql_query = $database->getConnection()->query($sql_code);
 
@@ -26,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['id'] = $user['id'];
                     $_SESSION['firstname'] = $user['firstname'];
 
-                    header("Location: view.php"); // Update with the correct location
+                    header("Location: view.php"); // Redirect to view.php upon successful login
                     exit();
                 } else {
                     echo "Login failed! Incorrect username or password";
@@ -38,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 
 
 <!DOCTYPE html>
