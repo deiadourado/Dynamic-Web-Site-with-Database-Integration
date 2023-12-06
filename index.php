@@ -47,40 +47,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 
 <head>
+    <!-- Meta tags for character set and viewport -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to the external stylesheet and favicon -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="images/cat.png" type="image/png">
+    <!-- Title of the webpage -->
     <title>Geek's Gossip</title>
 </head>
 
 <body>
+    <!-- Header section with logo and title -->
     <header>
-    <div class="logo-container">
-        <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="header logo"></a>
-        <h1>Geek's Gossip</h1>
-    </div>
-    <h2>Your geek news portal!</h2>
-
-
-    <h2 class="login">Login</h2>
-    <form action="" method="POST">
-        <p>
-            <label>Username</label>
-            <input type="text" name="username">
-        </p>
-        <p>
-            <label>Password</label>
-            <input type="password" name="password">
-        </p>
-        <p>
-        <div class="button-container">
-            <button type="submit" class="btn-primary">Sign In</button>
-            <br>
-            <a href="signup.php" class="btn-signup">Sign Up</a>
+        <div class="logo-container">
+            <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="header logo"></a>
+            <h1>Geek's Gossip</h1>
         </div>
+        <h2>Your geek news portal!</h2>
 
-        </p>
-    </form>
+        <!-- Login section with form -->
+        <h2 class="login">Login</h2>
+        <form action="" method="POST">
+            <p>
+                <label>Username</label>
+                <input type="text" name="username">
+            </p>
+            <p>
+                <label>Password</label>
+                <input type="password" name="password">
+            </p>
+            <p>
+                <!-- Container for buttons with Sign In and Sign Up options -->
+                <div class="button-container">
+                    <button type="submit" class="btn-primary">Sign In</button>
+                    <br>
+                    <a href="signup.php" class="btn-signup">Sign Up</a>
+                </div>
+            </p>
+        </form>
+    </header>
+</body>
+
 </html>
